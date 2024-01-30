@@ -56,5 +56,15 @@
 @media screen and (min-width: 768px) {
   .form {
     min-width: 24rem;
+    
   }
+  .content{
+    display:flex;
+    justify-content:right;
+  }
+}
+
+.loading{
+  display:flex;
+  justify-content: center;
 }

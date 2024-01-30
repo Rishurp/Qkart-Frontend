@@ -7,6 +7,7 @@ import { config } from "../App";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Register.css";
+import { useHistory, Link } from "react-router-dom";
 
 const Register = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -16,6 +17,11 @@ const Register = () => {
   let [isApiCall, setApiCall] = useState(false);
 
   // TODO: CRIO_TASK_MODULE_REGISTER - Implement the register function
+
+
+
+
+
   /**
    * Definition for register handler
    * - Function to be called when the user clicks on the register button or submits the register form

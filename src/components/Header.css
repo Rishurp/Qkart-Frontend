@@ -19,6 +19,15 @@
 .explore-button {
     color: #00a278 !important;
 }
+.registerbtn{
+
+    background-color: #00a278 important;
+}
+.avatar{
+    display:flex;
+    align-items: center;
+}
+
 
 @media screen and (min-width: 768px) {
     .username-text {

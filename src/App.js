@@ -11,7 +11,11 @@ export const config = {
 function App() {
   return (
     <div className="App">
-          <Register />
+         <Switch>
+          <Route exact path="/" component={Products} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register}/>
+         </Switch>
     </div>
   );
 }

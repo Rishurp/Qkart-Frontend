@@ -26,9 +26,10 @@ const Products = () => {
 
   return (
     <div>
-      <Header>
+      <Header hasHiddenAuthButtons >
+        
+        </Header>
 
-      </Header>
 
        <Grid container>
          <Grid item className="product-grid">

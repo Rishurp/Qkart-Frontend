@@ -15,6 +15,7 @@ const Register = () => {
   let [password,setPassword] = useState("");
   let [confirmPassword, setConfirmPassword] = useState("");
   let [isApiCall, setApiCall] = useState(false);
+  let history = useHistory();
 
   // TODO: CRIO_TASK_MODULE_REGISTER - Implement the register function
 
@@ -66,6 +67,7 @@ const Register = () => {
 
   const register = async (formData) => {
 
+  
   setApiCall(true);
   if(validateInput(formData) )
   {
@@ -84,7 +86,7 @@ const Register = () => {
     if(response.status === 201 )
     {
       enqueueSnackbar("Registered successfully",{ variant: 'success' });
-      
+      history.push("/login");
     }
     }catch(err){
 
@@ -100,6 +102,10 @@ const Register = () => {
       enqueueSnackbar("Something went wrong ", { variant: 'error' } ) 
     }
     }
+  }
+  else
+  {
+    setApiCall(false);
   }
 
     
@@ -165,7 +171,7 @@ const Register = () => {
       justifyContent="space-between"
       minHeight="100vh"
     >
-      <Header hasHiddenAuthButtons />
+      <Header hasHiddenAuthButtons={false} />
       <Box className="content">
         <Stack spacing={2} className="form" >
           <h2 className="title">Register</h2>
@@ -203,15 +209,13 @@ const Register = () => {
             onChange={handleConfirmPassword}
             value={confirmPassword}
           />
-          {isApiCall ? ( <Box className="loading"><CircularProgress/> </Box>) : ( <Button className="button" variant="contained" type="submit"  onClick={handleRegister}>
+          {isApiCall ? ( <Box className="loads"><CircularProgress/> </Box>) : ( <Button  variant="contained" type="submit"  onClick={handleRegister}>
             Register Now
            </Button>) }
 
           <p className="secondary-action">
             Already have an account?{" "}
-             <a className="link" href="#">
-              Login here
-             </a>
+             <Link to="/login" className="link">Login Now</Link>
           </p>
         </Stack>
       </Box>

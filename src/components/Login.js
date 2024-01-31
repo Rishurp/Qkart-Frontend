@@ -80,7 +80,7 @@ let formData = {
         setApiCall(false)
         if(err.response.status === 400)
         {
-          enqueueSnackbar("Username does not exist", { variant: 'error' } )
+          enqueueSnackbar("Password is incorrect", { variant: 'error' } )
         }
         else 
         {
@@ -192,7 +192,7 @@ let handleLogin = () =>{
           </Button>)}
           <p className="secondary-action">
           Don’t have an account? 
-             <Link to="/register" className="link">Register</Link>
+             <Link to="/register" className="link">Register Now</Link>
           </p>
         </Stack>
       </Box>

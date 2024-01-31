@@ -40,8 +40,8 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
           
           isLoggedIn ? (
             <div><Stack direction="row" spacing={2} className="avatar">
-          <Avatar/>
-          <h5>testuser</h5>
+          <Avatar alt={username} src="public/avatar.png"/>
+          <h5>{username}</h5>
             <Button className="explore-button" onClick={handleLogout}
             >
             LOGOUT

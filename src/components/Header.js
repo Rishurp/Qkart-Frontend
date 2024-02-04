@@ -6,11 +6,10 @@ import "./Header.css";
 import { useHistory } from "react-router-dom";
 
 
-
 const Header = ({ children, hasHiddenAuthButtons }) => {
 
   let history=useHistory();
-  let [isLoggedIn, setLoggedIn] = useState("false")
+  let [isLoggedIn, setLoggedIn] = useState("false");
   let username=localStorage.getItem("username");
 
   let handleLogout = () =>{
@@ -35,7 +34,9 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
             <img src="logo_light.svg" alt="QKart-icon"></img>
         </Box>
         
-  
+        <div className="search-desktop">
+        {children}
+        </div>
         {hasHiddenAuthButtons ? ( <div>{
           
           isLoggedIn ? (
@@ -62,7 +63,6 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
             </div>)
            
         }  </div>)
-        
          : (
         <Button
           className="explore-button"
@@ -77,3 +77,61 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
 };
 
 export default Header;
+
+
+
+// import React, { useEffect, useState } from "react";
+// import { useHistory } from "react-router-dom";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import { Avatar, Button, Stack } from "@mui/material";
+// import "./Header.css";
+
+// const Header = ({ children, hasHiddenAuthButtons }) => {
+//   const history = useHistory();
+//   const userName = localStorage.getItem("username");
+
+
+
+
+
+//   const handleRemoveFromLocalStorage = () => {
+//     localStorage.clear();
+//     window.location.reload()
+//   };
+
+//   return (
+//     <div className="header" data-testid="header-container">
+//       <div className="header-title">
+//         <img src="logo_light.svg" alt="QKart-icon" />
+//       </div>
+//       {children}
+//       {hasHiddenAuthButtons ?  (
+//           <Button
+//             className="explore-button"
+//             startIcon={<ArrowBackIcon />}
+//             variant="text"
+//             onClick={(e) => history.push('/')}
+//           >
+//             Back to explore
+//           </Button>
+//         ) :(
+//         userName ? (
+//           <Stack direction="row" spacing={1} alignItems="center">
+//             <Avatar alt={userName} src="/public/avatar.png"/>
+//             <p>{userName}</p>
+//             <Button variant="contained" onClick={handleRemoveFromLocalStorage}>
+//               logout
+//             </Button>
+//           </Stack>
+//         )  : (
+//         <Stack direction="row">
+//         <Button variant="text" onClick={(e) => history.push('/login')} >Login</Button>
+//         <Button variant="contained" onClick={(e) => history.push('/register')}>Register</Button>
+//         </Stack>
+//       ) 
+//     )}  
+//     </div>
+//   );
+// };
+
+// export default Header

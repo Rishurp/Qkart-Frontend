@@ -94,16 +94,14 @@ export const getTotalQuantity = (items = []) => {
  */
 const ItemQuantity = ({ value, handleAdd, handleDelete, isReadOnly }) => {
   //console.log(isReadOnly)
-  if (isReadOnly) {
-    return (
-      <Stack direction="row" alignItems="center">
-        <Box padding="0.5rem" data-testid="item-qty">
-          Qty: {value}
-        </Box>
-      </Stack>
-    );
-  }
-  return (
+  return isReadOnly ? (
+    
+    <Stack direction="row" alignItems="center">
+      <Box padding="0.5rem" data-testid="item-qty">
+        Qty: {value}
+      </Box>
+    </Stack>
+  ) : (
     <Stack direction="row" alignItems="center">
       <IconButton
         size="small"
@@ -207,7 +205,7 @@ const Cart = ({ isReadOnly, products, items = [], handleQuantity }) => {
           <h2>Order Details</h2>
         </Box>
 
-        {/products/}
+        {/*products*/}
         <Box
           padding="1rem"
           display="flex"
@@ -222,7 +220,7 @@ const Cart = ({ isReadOnly, products, items = [], handleQuantity }) => {
           </Box>
         </Box>
 
-        {/subtotal/}
+        {/*subtotal*/}
         <Box
           padding="1rem"
           display="flex"
@@ -237,7 +235,7 @@ const Cart = ({ isReadOnly, products, items = [], handleQuantity }) => {
           </Box>
         </Box>
 
-        {/shipping/}
+        {/*shipping*/}
         <Box
           padding="1rem"
           display="flex"
@@ -252,7 +250,7 @@ const Cart = ({ isReadOnly, products, items = [], handleQuantity }) => {
           </Box>
         </Box>
 
-        {/total/}
+        {/*total*/}
         <Box
           padding="1rem"
           display="flex"

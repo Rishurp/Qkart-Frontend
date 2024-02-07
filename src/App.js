@@ -11,7 +11,7 @@ import Thanks from "./components/Thanks"
 import ipConfig from "./ipConfig.json";
 
 export const config = {
-  endpoint: `https://${ipConfig.workspaceIp}/api/v1`, // Replace with your actual endpoint
+  endpoint: `https://qkart-frontend-c25x.onrender.com/api/v1`, // Replace with your actual endpoint
 };
 
 function App() {

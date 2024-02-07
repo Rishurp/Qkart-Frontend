@@ -15,7 +15,7 @@ import Header from "./Header";
 import "./Products.css";
 import ProductCard from "./ProductCard";
 import Cart, { getTotalCartValue, generateCartItemsFrom } from "./Cart";
-import * as url from "url";
+
 
 const Products = () => {
   const { enqueueSnackbar } = useSnackbar();
